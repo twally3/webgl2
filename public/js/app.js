@@ -17,11 +17,11 @@ async function main(gl) {
 	const program = createProgram(gl, vertexShader, fragmentShader);
 
 	const positionArrtibLocation = gl.getAttribLocation(program, 'a_position');
-
 	const resolutionUniformLocation = gl.getUniformLocation(
 		program,
 		'u_resolution'
 	);
+	const colourUniformLocation = gl.getUniformLocation(program, 'u_colour');
 
 	const positionBuffer = gl.createBuffer();
 	gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
@@ -61,6 +61,13 @@ async function main(gl) {
 	gl.bindVertexArray(vao);
 
 	gl.uniform2f(resolutionUniformLocation, gl.canvas.width, gl.canvas.height);
+	gl.uniform4f(
+		colourUniformLocation,
+		Math.random(),
+		Math.random(),
+		Math.random(),
+		1
+	);
 
 	// Primitive Type, Offset, Count
 	gl.drawArrays(gl.TRIANGLES, 0, 6);
