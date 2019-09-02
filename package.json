@@ -1,0 +1,61 @@
+{
+	"name": "webgl2",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "serve ./public",
+		"lint": "eslint ./**/*.js",
+		"lint:fix": "npm run lint -- --fix",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"eslint": "^6.3.0",
+		"eslint-config-prettier": "^6.1.0",
+		"eslint-plugin-prettier": "^3.1.0",
+		"prettier": "^1.18.2",
+		"serve": "^11.1.0"
+	},
+	"prettier": {
+		"singleQuote": true,
+		"useTabs": true
+	},
+	"eslintConfig": {
+		"env": {
+			"browser": true,
+			"es6": true
+		},
+		"extends": [
+			"eslint:recommended",
+			"plugin:prettier/recommended"
+		],
+		"rules": {
+			"no-unused-vars": [
+				2,
+				{
+					"args": "after-used",
+					"argsIgnorePattern": "^_"
+				}
+			],
+			"no-console": "warn",
+			"no-var": "error",
+			"eqeqeq": [
+				"error",
+				"always"
+			],
+			"arrow-body-style": [
+				"error",
+				"as-needed"
+			],
+			"prettier/prettier": "error"
+		},
+		"parserOptions": {
+			"sourceType": "module",
+			"ecmaVersion": 2018
+		},
+		"globals": {}
+	}
+}
